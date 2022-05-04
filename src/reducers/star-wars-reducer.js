@@ -1,10 +1,18 @@
 import { SEARCH, ADD_CHAR } from '../actions'
 
-const starwarsReducer = (state = [], action) => {
+const defaultState = () => {
+  return {
+    data: {},
+    savedChars: {}
+  }
+}
+
+const starwarsReducer = (state = defaultState(), action) => {
   switch(action.type) {
     case SEARCH:
-      console.log(action.payload)
-      return action.payload
+      const tempState = {...state}
+      tempState.data = action.payload
+      return tempState 
     case ADD_CHAR:
       return state
     default: 

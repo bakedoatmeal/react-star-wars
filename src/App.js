@@ -6,6 +6,7 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducers from './reducers';
+import Display from './Display';
 
 const store = createStore(reducers, applyMiddleware(thunk))
 
@@ -14,6 +15,7 @@ function App() {
     <Provider store={store}>
       <Home />
       <StarWars />
+      <Display />
     </Provider>
   );
 }
