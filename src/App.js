@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducers from './reducers';
 import Display from './Display';
+import DisplayAll from './DisplayAll';
 
 const store = createStore(reducers, applyMiddleware(thunk))
 
@@ -16,6 +17,7 @@ function App() {
       <Home />
       <StarWars />
       <Display />
+      <DisplayAll />
     </Provider>
   );
 }
