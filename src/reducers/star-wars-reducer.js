@@ -4,7 +4,7 @@ const starwarsReducer = (state = [], action) => {
   switch(action.type) {
     case SEARCH:
       console.log(action.payload)
-      return state
+      return action.payload
     case ADD_CHAR:
       return state
     default: 
