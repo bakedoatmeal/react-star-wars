@@ -1,22 +1,33 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector} from "react-redux";
+import { useEffect } from 'react';
 
 const DisplayAll = () => {
   const chars = useSelector(state => state.starWars.savedChars)
 
-  console.log(chars)
-
-  const allData = chars.map((data) => {
-    console.log(data)
+  const allData = chars.map((data, index) => {
+    const films = data.char.filmNames.map((name) => {
+      return(
+        <li>{name}</li>
+      )
+    })
     return (
-      <div>
-        <p>{data.char.name}</p>
+      <div className='saved-char'>
+        <h1>{data.char.name}</h1>
+        <p>Gender: {data.char.gender}</p>
+        <p>Hair color: {data.char.hair_color}</p>
+        <p>Height: {data.char.height}cm</p>
+        <p>Home planet: {data.char.planetName}</p>
+        <p>Films: </p>
+        <ul>
+          {films}
+        </ul>
       </div>
     )
   })
 
   return (
-    <div>
+    <div className="saved-chars">
       {allData}
     </div>
   )
