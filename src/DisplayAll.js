@@ -6,9 +6,18 @@ const DisplayAll = () => {
 
   console.log(chars)
 
+  const allData = chars.map((data) => {
+    console.log(data)
+    return (
+      <div>
+        <p>{data.char.name}</p>
+      </div>
+    )
+  })
+
   return (
     <div>
-      
+      {allData}
     </div>
   )
 

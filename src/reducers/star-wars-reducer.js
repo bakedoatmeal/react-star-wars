@@ -17,7 +17,7 @@ const starwarsReducer = (state = defaultState(), action) => {
       let tempState1 = {...state}
       const data = tempState1.savedChars
       data.push(action.payload)
-      console.log(data)
+      console.log('Saved chars: ', data)
       tempState1.savedChars = data
       return tempState1
     default: 

@@ -21,6 +21,7 @@ const StarWars = () => {
           onChange={ (e) => {
             setTerm(e.target.value)
           }}
+          max='83'
           >
           </input>
           <button>Submit</button>
