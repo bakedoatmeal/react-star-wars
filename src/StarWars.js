@@ -12,7 +12,11 @@ const StarWars = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          dispatch(search(term))
+          if (term === '17') {
+            alert('There is no number 17!')
+          } else {
+            dispatch(search(term))
+          }
         }}
       >
         <input 
@@ -21,6 +25,7 @@ const StarWars = () => {
           onChange={ (e) => {
             setTerm(e.target.value)
           }}
+          min='1'
           max='83'
           >
           </input>

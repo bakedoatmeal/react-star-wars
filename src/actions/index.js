@@ -4,6 +4,7 @@ export const ADD_CHAR = "ADD_CHAR"
 export const search = (search_term) => {
 
   return async (dispatch) => {
+
     const path = `https://swapi.dev/api/people/${search_term}`
     const res = await fetch(path)
     const json = await res.json()

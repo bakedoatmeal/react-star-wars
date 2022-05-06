@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector} from "react-redux";
-import { useEffect } from 'react';
 
 const DisplayAll = () => {
   const chars = useSelector(state => state.starWars.savedChars)
