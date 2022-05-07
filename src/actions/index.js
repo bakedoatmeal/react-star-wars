@@ -14,12 +14,18 @@ export const search = (search_term) => {
     const json2 = await res2.json()
     const planetName = json2.name
 
-    const filmNames = []
-    for (let i = 0; i < films.length; i = i + 1) {
-      const filmRes = await fetch(films[i])
-      const filmJson = await filmRes.json()
-      filmNames.push(filmJson.title)
-    }
+    const filmsRes = await Promise.all(json.films.map(film => fetch(film)))
+    const filmJson = await Promise.all(filmsRes.map(res => res.json()))
+    const filmNames = filmJson.map(film => film.title)
+
+    console.log(filmNames)
+
+    // const filmNames = []
+    // for (let i = 0; i < films.length; i = i + 1) {
+    //   const filmRes = await fetch(films[i])
+    //   const filmJson = await filmRes.json()
+    //   filmNames.push(filmJson.title)
+    // }
 
     dispatch({
       type: SEARCH, 
